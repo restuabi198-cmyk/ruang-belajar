@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ruang Belajar - Dashboard Siswa</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Lexend:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/CSS/style.css">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface": "#1a1b21",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#822800",
+                        "outline": "#737783",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "surface-tint": "#2b5bb5",
+                        "surface-container": "#ededf5",
+                        "surface-container-highest": "#e2e2ea",
+                        "tertiary-container": "#853100",
+                        "primary-fixed": "#d9e2ff",
+                        "primary-container": "#0d47a1",
+                        "tertiary-fixed": "#ffdbcd",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#f0f0f8",
+                        "on-secondary-container": "#6b1f00",
+                        "on-primary-container": "#a1bbff",
+                        "surface-bright": "#faf8ff",
+                        "secondary-container": "#fe7e4f",
+                        "inverse-surface": "#2e3036",
+                        "outline-variant": "#c3c6d4",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "secondary": "#a43c12",
+                        "on-tertiary-container": "#ffa781",
+                        "on-primary-fixed": "#001945",
+                        "on-tertiary-fixed": "#360f00",
+                        "on-surface-variant": "#434652",
+                        "inverse-primary": "#b0c6ff",
+                        "surface-variant": "#e2e2ea",
+                        "on-error-container": "#93000a",
+                        "on-background": "#1a1b21",
+                        "primary": "#003178",
+                        "surface": "#faf8ff",
+                        "surface-container-high": "#e8e7f0",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "background": "#faf8ff",
+                        "surface-dim": "#d9d9e1",
+                        "surface-container-low": "#f3f3fb",
+                        "secondary-fixed": "#ffdbcf",
+                        "primary-fixed-dim": "#b0c6ff",
+                        "on-secondary-fixed": "#380c00",
+                        "secondary-fixed-dim": "#ffb59c",
+                        "on-primary-fixed-variant": "#00429c",
+                        "on-error": "#ffffff",
+                        "tertiary": "#602100",
+                        "error-container": "#ffdad6"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-mobile": "20px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Lexend"],
+                        "display-xl": ["Lexend"],
+                        "headline-md": ["Lexend"],
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "button": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    fontSize: {
+                        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "headline-lg": ["32px", { lineHeight: "1.3", fontWeight: "600" }],
+                        "display-xl": ["48px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "headline-md": ["24px", { lineHeight: "1.4", fontWeight: "600" }],
+                        "body-sm": ["14px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "button": ["16px", { lineHeight: "1", fontWeight: "600" }],
+                        "label-md": ["14px", { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-body-md text-body-md antialiased overflow-x-hidden">
+<!-- App Container -->
+<div class="flex min-h-screen w-full">
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden lg:flex flex-col fixed left-0 top-0 h-screen w-64 border-r border-surface-variant bg-surface-container-lowest z-40 transition-all duration-200">
+<!-- Header -->
+<div class="p-6 flex items-center gap-3 border-b border-surface-variant/50">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+</div>
+<div>
+<h1 class="font-headline-md text-[18px] font-bold text-primary-container tracking-tight">Ruang Belajar</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px]">Dashboard Pelajar</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="flex-1 overflow-y-auto py-6 px-4 space-y-2">
+<!-- Active Item: Beranda -->
+<a class="flex items-center gap-4 px-4 py-3 bg-primary-fixed text-on-primary-fixed border-r-4 border-primary rounded-l-lg font-label-md text-label-md transition-colors group" href="dashboard.html">
+<span class="material-symbols-outlined icon-fill">home</span>
+<span>Beranda</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-colors group" href="kursussaya.html">
+<span class="material-symbols-outlined group-hover:icon-fill transition-all">import_contacts</span>
+<span>Kursus Saya</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:icon-fill transition-all">leaderboard</span>
+<span>Progres Belajar</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-lg font-label-md text-label-md transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:icon-fill transition-all">settings</span>
+<span>Pengaturan</span>
+</a>
+</div>
+<!-- User Profile Snippet (Bottom of Sidebar) -->
+<div class="p-4 border-t border-surface-variant/50">
+<div class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer">
+<img alt="Student Portrait" class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="Portrait of a young male student with a warm smile, wearing a casual sweater against a clean light background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFleXf8bI3oC_CADaD0gNQFikjkJMXsxJ3FdvPNAL3UAoXGhK2TkPNEiAipm2gGrhXkUgmc6y_2tI1zPIQ4Z0wuqNSW_c7dw1mQZSz0SDwD7wBKHdnqOE5KYY3siPWKckRTciUXhDVsv-F4GEwXpL6-5qVM7fkHhJJFcu5j3PvNU3wGYLlA5HHCIfCNq_GuB5qgNTsIED5xx7JK0ZNw22w_asQa04gmyHJQl2V27P5sJCSHn0Gzw5REfX5EBnbMM611KzUmocRQ18"/>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-label-md text-on-surface truncate">Budi Santoso</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant truncate">Siswa Reguler</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">more_vert</span>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col min-w-0 ml-0 lg:ml-64 bg-surface relative">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-30 w-full bg-surface/90 backdrop-blur-md border-b border-surface-variant transition-all duration-200 shadow-[0_4px_20px_-2px_rgba(13,71,161,0.05)]">
+<div class="flex justify-between items-center px-4 md:px-8 py-4 max-w-container-max mx-auto w-full">
+<!-- Mobile Brand / Menu -->
+<div class="flex items-center gap-3 lg:hidden">
+<button class="p-2 text-on-surface hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="font-headline-md text-[20px] font-extrabold text-primary-container tracking-tight">Ruang Belajar</span>
+</div>
+<!-- Search Bar (on_left as per JSON, but centered visually on desktop for better UX, left-aligned in its flex container) -->
+<div class="hidden md:flex flex-1 max-w-md ml-4 lg:ml-0">
+<div class="relative w-full group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-full py-2.5 pl-10 pr-4 font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all shadow-sm group-focus-within:shadow-md" placeholder="Cari kursus, materi..." type="text"/>
+</div>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-2 md:gap-4 ml-auto">
+<button class="md:hidden p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="relative p-2 text-on-surface-variant hover:bg-surface-container hover:text-primary rounded-full transition-colors duration-200">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-error rounded-full border border-surface-container-lowest"></span>
+</button>
+<div class="w-8 h-8 rounded-full border border-surface-variant overflow-hidden ml-2 cursor-pointer hidden md:block">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="Portrait of a young male student with a warm smile, wearing a casual sweater against a clean light background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-kINTiHcPsQcy2ZOTtXsuJ1ihqWWWr-HXP7xDZvt9Csk4Szm1sH4p3TV601sUxgHQJX8mVTAy9zNYE5iJ9hYjg6U7u9ru7KpJBDJGSBtSLnh5msr5qPG36hU-azvyaK0LqHpusInxchRzirFtIIP7a37nSNwJUY-DUBZwSMmJqa614MKWmMWP9GFQUuVsucA0w62M8F-VX4Z5n5RK8Xb4Au32VWj9YOcCY_lyukEDw3WYSVI0pD5escdHpwB8UENq0VehvMtX9Y8"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Page Content Canvas -->
+<div class="flex-1 p-4 md:p-8 max-w-container-max mx-auto w-full space-y-8 pb-24 lg:pb-8">
+<!-- Welcome Banner (Bento Style) -->
+<section class="relative overflow-hidden rounded-2xl bg-primary-fixed border border-primary-fixed-dim shadow-[0_8px_30px_rgba(13,71,161,0.08)]">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary-container/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4"></div>
+<div class="absolute bottom-0 left-0 w-48 h-48 bg-secondary-container/10 rounded-full blur-2xl translate-y-1/3 -translate-x-1/4"></div>
+<div class="relative z-10 p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="space-y-4 max-w-xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-lowest/80 backdrop-blur rounded-full border border-outline-variant/30">
+<span class="material-symbols-outlined text-secondary text-[16px]">wb_sunny</span>
+<span class="font-label-md text-[12px] text-on-surface-variant uppercase tracking-wider">Selamat Pagi</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-primary-fixed">Siap untuk melanjutkan belajar hari ini, Budi?</h2>
+<p class="font-body-lg text-body-lg text-on-primary-fixed/80">Anda memiliki 2 tugas yang belum diselesaikan minggu ini. Mari selesaikan sekarang!</p>
+<div class="pt-2">
+<button class="bg-secondary-container hover:bg-secondary text-on-secondary-container font-button text-button px-6 py-3 rounded-full shadow-sm hover:shadow-md transition-all duration-200 inline-flex items-center gap-2">
+                                    Mulai Belajar
+                                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="hidden lg:block w-48 h-48 flex-shrink-0">
+<!-- Abstract decorative element representing learning -->
+<div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&amp;fit=crop&amp;w=400&amp;q=80')] bg-cover bg-center rounded-2xl shadow-lg border-4 border-surface-container-lowest transform rotate-3 hover:rotate-0 transition-transform duration-500" data-alt="Abstract composition of books and a laptop on a clean white desk, bright natural lighting, soft shadows, modern aesthetic"></div>
+</div>
+</div>
+</section>
+<!-- Progress Summary Stats Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+<!-- Stat Card 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-surface-variant shadow-[0_2px_10px_rgba(13,71,161,0.02)] flex items-start gap-4 hover:-translate-y-1 transition-transform duration-200">
+<div class="p-3 bg-primary-fixed rounded-lg text-primary">
+<span class="material-symbols-outlined icon-fill">local_library</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-outline">Kursus Selesai</p>
+<p class="font-headline-md text-[28px] font-bold text-on-surface mt-1">4</p>
+<div class="flex items-center gap-1 mt-2 text-primary font-label-md text-[12px]">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+1 bulan ini</span>
+</div>
+</div>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-surface-variant shadow-[0_2px_10px_rgba(13,71,161,0.02)] flex items-start gap-4 hover:-translate-y-1 transition-transform duration-200">
+<div class="p-3 bg-tertiary-fixed rounded-lg text-tertiary">
+<span class="material-symbols-outlined icon-fill">schedule</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-outline">Jam Belajar</p>
+<p class="font-headline-md text-[28px] font-bold text-on-surface mt-1">32.5</p>
+<div class="flex items-center gap-1 mt-2 text-outline font-label-md text-[12px]">
+<span>Total jam bulan ini</span>
+</div>
+</div>
+</div>
+<!-- Stat Card 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-surface-variant shadow-[0_2px_10px_rgba(13,71,161,0.02)] flex items-start gap-4 hover:-translate-y-1 transition-transform duration-200">
+<div class="p-3 bg-secondary-container/20 rounded-lg text-secondary">
+<span class="material-symbols-outlined icon-fill">workspace_premium</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-outline">Poin Prestasi</p>
+<p class="font-headline-md text-[28px] font-bold text-on-surface mt-1">850</p>
+<div class="flex items-center gap-1 mt-2 text-secondary font-label-md text-[12px]">
+<span>Tingkat Menengah</span>
+</div>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+<!-- Left Column (Wider) - Recent Courses -->
+<div class="xl:col-span-2 space-y-6">
+<div class="flex justify-between items-end">
+<h3 class="font-headline-md text-headline-md text-on-surface">Melanjutkan Belajar</h3>
+<a class="font-label-md text-label-md text-primary hover:underline flex items-center gap-1" href="#">Lihat Semua <span class="material-symbols-outlined text-[16px]">chevron_right</span></a>
+</div>
+<!-- Active Course Card -->
+<div class="bg-surface-container-lowest rounded-2xl border border-surface-variant overflow-hidden shadow-[0_4px_15px_rgba(13,71,161,0.03)] group">
+<div class="flex flex-col md:flex-row">
+<div class="w-full md:w-2/5 h-48 md:h-auto relative overflow-hidden">
+<img alt="UI/UX Design Course" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up of a computer screen showing UI design wireframes in a design software, colorful graphic elements, well lit workspace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVedjhsrQtLKMmxrrgTeDhfDI49yA1Hh3pwwlSs9TDFKfwdGYSe-JAp9eiXrunqqDNW5DhqRXZ8ADzVVSvVhRz9XtJiWOY5fR5cvDEyrsd4Us0J0xfOWpAqGq-BCa6l8BFjHQKWz9VROcO2q-HCntMU0q7sB82mbSmMFmfFST5f8SWhygp6jKDyq21UN3L30kjhZ_CLXQg-IAAIkn4BbRZd-Kds6R9GpIBgQyHkGMMVJI6V2iyaSGP9G-tvouM6xxb1ohTzsgnhC4"/>
+<div class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur px-2 py-1 rounded text-[11px] font-label-md text-primary font-bold uppercase tracking-wide">Sedang Dipelajari</div>
+</div>
+<div class="p-6 w-full md:w-3/5 flex flex-col justify-center">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2.5 py-0.5 bg-surface-container text-on-surface-variant rounded-full font-label-md text-[11px]">Desain</span>
+<span class="text-outline text-[12px]">•</span>
+<span class="font-body-sm text-[13px] text-outline flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">menu_book</span> Modul 3 dari 8</span>
+</div>
+<h4 class="font-headline-md text-[20px] text-on-surface mb-2 line-clamp-2">Desain UI/UX Lanjutan: Sistem Desain</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 line-clamp-2">Pelajari cara membangun, mengelola, dan mengimplementasikan sistem desain yang terukur untuk produk digital.</p>
+<!-- Thick Progress Bar -->
+<div class="space-y-2 mt-auto">
+<div class="flex justify-between font-label-md text-[13px]">
+<span class="text-on-surface">Progres</span>
+<span class="text-primary font-bold">45%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2.5">
+<div class="bg-primary h-2.5 rounded-full" style="width: 45%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column (Narrower) - Recommendations & Schedule -->
+<div class="space-y-8">
+<!-- Recommendations -->
+<div>
+<h3 class="font-headline-md text-[20px] text-on-surface mb-4">Rekomendasi Untukmu</h3>
+<div class="space-y-4">
+<!-- Rec Card 1 -->
+<a class="flex gap-4 p-3 bg-surface-container-lowest rounded-xl border border-surface-variant hover:border-primary/30 hover:shadow-md transition-all group" href="#">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Data Science Course" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" data-alt="Glowing green matrix style code cascading down a dark screen, abstract representation of data and programming" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjOLBRNCnEAnDCCi6MirTFbm-m2tU-RsKM7P5-HThM97-SI5rSbUUxeki_cpBt4CwZg47FeYeDA6_MBkdCvs9g-ygo8aFUW5u7GPln4znJg8XVKffzbU6s4kzusx8aCOBbArozzr6NB8LI_QYhGcNaxgdhdq_WlS8QBBEd5WK6nDl2WsfW-oDRGaKvOa8-RPUgXf4mKMu8PyDoLoEd7y8A3CT_BBnplVyjiENsjFWYzU-K-QG7GZ72HdCMsWyJRomM8q1eq8C74mM"/>
+</div>
+<div class="flex flex-col justify-center">
+<h4 class="font-label-md text-[14px] text-on-surface leading-tight mb-1 group-hover:text-primary transition-colors">Data Science untuk Pemula</h4>
+<p class="font-body-sm text-[12px] text-outline mb-2">Oleh Dr. Hendra</p>
+<div class="flex items-center gap-1 text-secondary text-[11px] font-bold">
+<span class="material-symbols-outlined icon-fill text-[14px]">star</span> 4.8
+                                        </div>
+</div>
+</a>
+<!-- Rec Card 2 -->
+<a class="flex gap-4 p-3 bg-surface-container-lowest rounded-xl border border-surface-variant hover:border-primary/30 hover:shadow-md transition-all group" href="#">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Ecology Course" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" data-alt="Lush green tropical leaves with bright sunlight filtering through, vibrant natural colors, representing environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJcOkImugDyiafRizG0O-WVjISpU40ft8y3EoKtrDJQXa3yV8JsjWgWWp9lwuqMH9Rp1wJGrEXZ3ipFx8mSSAhoMVlfpaYGRfWYYo4APhesF9pz7g5DWQEupWD6tiT6GKzlARfzJN7iccCIHWINWhN-Miro7BldW1ySatZ29W-fOUi4KTOtlmlcVWEHwuPe55Swo4wbbU5-kzysJxnIwPRGQQxu4xBQAE1xIrFGZufz8hDB19bpMWwsIgkjg6lNr_9a7BKEi4ZDH8"/>
+</div>
+<div class="flex flex-col justify-center">
+<h4 class="font-label-md text-[14px] text-on-surface leading-tight mb-1 group-hover:text-primary transition-colors">Pengantar Ekologi Modern</h4>
+<p class="font-body-sm text-[12px] text-outline mb-2">Oleh Prof. Siti</p>
+<div class="flex items-center gap-1 text-secondary text-[11px] font-bold">
+<span class="material-symbols-outlined icon-fill text-[14px]">star</span> 4.9
+                                        </div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 lg:hidden bg-surface-container-lowest rounded-t-2xl border-t border-surface-variant shadow-[0_-4px_15px_rgba(13,71,161,0.08)] pb-[calc(12px+env(safe-area-inset-bottom))]">
+<!-- Active Tab -->
+<a class="flex flex-col items-center justify-center text-on-primary-fixed bg-primary-fixed rounded-xl px-4 py-1.5 transition-transform active:scale-90 scale-95" href="#">
+<span class="material-symbols-outlined icon-fill text-[24px]">home</span>
+<span class="text-[10px] font-medium font-headline-lg mt-0.5">Beranda</span>
+</a>
+<!-- Inactive Tabs -->
+<a class="flex flex-col items-center justify-center text-outline hover:text-on-surface-variant transition-colors py-1.5 px-2" href="#">
+<span class="material-symbols-outlined text-[24px]">school</span>
+<span class="text-[10px] font-medium font-headline-lg mt-0.5">Kursus</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline hover:text-on-surface-variant transition-colors py-1.5 px-2" href="#">
+<span class="material-symbols-outlined text-[24px]">trending_up</span>
+<span class="text-[10px] font-medium font-headline-lg mt-0.5">Progres</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline hover:text-on-surface-variant transition-colors py-1.5 px-2" href="#">
+<span class="material-symbols-outlined text-[24px]">person</span>
+<span class="text-[10px] font-medium font-headline-lg mt-0.5">Profil</span>
+</a>
+</nav>
+</div>
+</body></html>

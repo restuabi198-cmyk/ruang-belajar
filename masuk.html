@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Masuk - Ruang Belajar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Lexend:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/CSS/style.css">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "primary": "#003178",
+                        "secondary-fixed-dim": "#ffb59c",
+                        "on-tertiary-fixed": "#360f00",
+                        "tertiary": "#602100",
+                        "surface-container-highest": "#e2e2ea",
+                        "on-primary": "#ffffff",
+                        "surface": "#faf8ff",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e2e2ea",
+                        "surface-dim": "#d9d9e1",
+                        "on-secondary-fixed": "#380c00",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#0d47a1",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e8e7f0",
+                        "on-secondary-fixed-variant": "#822800",
+                        "surface-container-low": "#f3f3fb",
+                        "outline-variant": "#c3c6d4",
+                        "inverse-surface": "#2e3036",
+                        "inverse-on-surface": "#f0f0f8",
+                        "primary-fixed-dim": "#b0c6ff",
+                        "on-primary-container": "#a1bbff",
+                        "inverse-primary": "#b0c6ff",
+                        "outline": "#737783",
+                        "surface-container": "#ededf5",
+                        "surface-tint": "#2b5bb5",
+                        "on-tertiary-container": "#ffa781",
+                        "primary-fixed": "#d9e2ff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#ffdbcf",
+                        "surface-bright": "#faf8ff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#ffdbcd",
+                        "secondary": "#a43c12",
+                        "on-surface-variant": "#434652",
+                        "on-background": "#1a1b21",
+                        "on-surface": "#1a1b21",
+                        "secondary-container": "#fe7e4f",
+                        "on-primary-fixed": "#001945",
+                        "on-primary-fixed-variant": "#00429c",
+                        "on-secondary-container": "#6b1f00",
+                        "on-error-container": "#93000a",
+                        "background": "#faf8ff",
+                        "tertiary-container": "#853100"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-lg": ["Lexend"],
+                        "display-xl": ["Lexend"],
+                        "button": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Lexend"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "button": ["16px", {"lineHeight": "1", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background min-h-screen flex items-center justify-center p-gutter">
+<div class="max-w-5xl w-full bg-surface-container-lowest rounded-xl shadow-[0_8px_32px_-8px_rgba(13,71,161,0.12)] overflow-hidden flex flex-col md:flex-row border border-outline-variant/30">
+<!-- Image Side -->
+<div class="md:w-1/2 relative hidden md:block">
+<img alt="Students studying" class="w-full h-full object-cover" data-alt="Group of diverse young adults studying together in a modern, bright library with soft natural light, warm atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArGAJfxTUoU93PAC3xRbs4cCy3IxnMzuODIknI1dduCptIYbAxUE2UrKn415U_4ln3py1vgYkdP_uX7_WRJbvyXFHxRCceWzMQeUoD1jN4C5rFQHwKT4IAQ0UFY8AyZL-2iDs6UWv-2F1Mxldp9oNTfRt7GmvdPuqdFwpNFxbDbMH5ZhA98djBiDjzNFpgZD5Yv6VSAYpzUCiAjnwoq9bEPmtJ7_g1TRr8sgTBD8I4RZXOJoz-uhhifLQJweGoKZFybd7IwAQmjfs"/>
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[2px]"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+<div class="absolute bottom-12 left-12 right-12 text-on-primary">
+<h2 class="font-headline-lg text-headline-lg mb-4">Mulai Perjalanan Belajarmu</h2>
+<p class="font-body-lg text-body-lg text-on-primary/90">Akses ribuan materi premium dan tingkatkan keahlianmu bersama pakar industri.</p>
+</div>
+</div>
+<!-- Form Side -->
+<div class="md:w-1/2 p-8 md:p-12 lg:p-16 flex flex-col justify-center">
+<div class="mb-8">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_stories</span>
+</div>
+<span class="font-headline-md text-headline-md text-primary font-bold tracking-tight">Ruang Belajar</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-2">Masuk ke Ruang Belajar</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Lanjutkan perjalanan belajarmu</p>
+</div>
+<form class="space-y-6">
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-2" for="email">Email</label>
+<input class="w-full px-4 py-3 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-primary-container transition-all" id="email" placeholder="nama@email.com" type="email"/>
+</div>
+<div>
+<div class="flex items-center justify-between mb-2">
+<label class="block font-label-md text-label-md text-on-surface" for="password">Kata Sandi</label>
+<a class="font-body-sm text-body-sm text-primary hover:text-primary-container transition-colors" href="#">Lupa Kata Sandi?</a>
+</div>
+<div class="relative">
+<input class="w-full px-4 py-3 bg-surface-container-lowest border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-primary-container transition-all pr-12" id="password" placeholder="••••••••" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface-variant" type="button">
+<span class="material-symbols-outlined">visibility_off</span>
+</button>
+</div>
+</div>
+<button onclick="window.location.href='dashboard.html'" class="w-full py-4 bg-secondary-container hover:bg-secondary-container/90 text-on-secondary-container font-button text-button rounded-lg transition-colors flex items-center justify-center gap-2" type="button">
+                    Masuk
+                    <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</form>
+<div class="my-8 flex items-center before:flex-1 before:border-t before:border-outline-variant after:flex-1 after:border-t after:border-outline-variant">
+<span class="px-4 font-body-sm text-body-sm text-on-surface-variant">atau masuk dengan</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<button class="py-3 px-4 flex items-center justify-center gap-3 bg-surface border border-outline-variant hover:bg-surface-container-low rounded-lg font-button text-button text-on-surface transition-colors" type="button">
+<svg class="mr-2 h-5 w-5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"></path><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path></svg>
+                    Google
+                </button>
+<button class="py-3 px-4 flex items-center justify-center gap-3 bg-surface border border-outline-variant hover:bg-surface-container-low rounded-lg font-button text-button text-on-surface transition-colors" type="button">
+<svg class="mr-2 h-5 w-5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#1877F2"></path></svg>
+                    Facebook
+                </button>
+</div>
+<p class="mt-8 text-center font-body-md text-body-md text-on-surface-variant">
+                Belum punya akun? <a class="text-primary hover:text-primary-container font-semibold transition-colors" href="daftar.html">Daftar</a>
+</p>
+</div>
+</div>
+</body></html>
